@@ -7,7 +7,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import com.mactavish.contacts.MainApp;
-import org.controlsfx.dialog.Dialogs;
 
 public class PersonOverviewController {
     @FXML
@@ -124,13 +123,6 @@ public class PersonOverviewController {
                 showPersonDetails(selectedPerson);
             }
 
-        } else {
-            // Nothing selected.
-            Dialogs.create()
-                    .title("No Selection")
-                    .masthead("No Person Selected")
-                    .message("Please select a person in the table.")
-                    .showWarning();
         }
     }
 
@@ -142,13 +134,6 @@ public class PersonOverviewController {
         int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
         if (selectedIndex >= 0) {
             personTable.getItems().remove(selectedIndex);
-        } else {
-            // Nothing selected.
-            Dialogs.create()
-                    .title("No Selection")
-                    .masthead("No Person Selected")
-                    .message("Please select a person in the table.")
-                    .showWarning();
         }
     }
 }
